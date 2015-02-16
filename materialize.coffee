@@ -18,11 +18,10 @@ Template['afFormGroup_materialize'].helpers
       'boolean-select'
       'select-multiple'
     ]
-    type = AutoForm.getInputType(self.afFieldInputAtts)
+    type = AutoForm.getInputType(@afFieldInputAtts)
     _.contains(skipLabelTypes, type)
 
   skipLabel: ->
-    self = this
     skipLabelTypes = [
       'checkbox'
       'checkbox-group'
@@ -34,8 +33,8 @@ Template['afFormGroup_materialize'].helpers
       'boolean-radio-group'
       'toggle'
     ]
-    type = AutoForm.getInputType(self.afFieldInputAtts)
-    self.skipLabel or _.contains(skipLabelTypes, type)
+    type = AutoForm.getInputType(@afFieldInputAtts)
+    @skipLabel or _.contains(skipLabelTypes, type)
 
 _.each [
   'afInputButton_materialize'

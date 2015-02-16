@@ -11,7 +11,6 @@ Package.onUse(function(api) {
   api.use("aldeed:autoform@4.2.0");
   api.addFiles([
     "materialize.html",
-    //"materialize.css",
     "materialize.coffee",
   ], "client");
 });
