@@ -1,0 +1,339 @@
+<template name="autoForm_materialize">
+  {{#unless afDestroyUpdateForm}}
+    <form {{atts}}>
+      <div class="row">
+        {{#with innerContext ..}}
+          {{> UI.contentBlock this}}
+        {{/with}}
+      </div>
+    </form>
+  {{/unless}}
+</template>
+
+<template name="quickForm_materialize">
+  {{#autoForm this.qfAutoFormContext}}
+    {{> afQuickFields}}
+    {{#if qfShouldRenderButton}}
+      <div class="col s12">
+        <button type="submit" {{submitButtonAtts}}>
+          {{#with ../atts.buttonContent}}
+            {{this}}
+          {{else}}
+            Submit
+          {{/with}}
+        </button>
+      </div>
+    {{/if}}
+  {{/autoForm}}
+</template>
+
+<template name="afQuickField_materialize">
+  {{#if isGroup atts=this}}
+    {{> afObjectField_materialize}}
+  {{else}}
+    {{#if isFieldArray atts=this}}
+      {{> afArrayField_materialize}}
+    {{else}}
+      {{> afFormGroup_materialize groupAtts}}
+    {{/if}}
+  {{/if}}
+</template>
+
+<template name="afFormGroup_materialize">
+  <div class="input-field">
+    {{#if skipLabel}}
+      {{> afFieldInput this.afFieldInputAtts}}
+    {{else}}
+      {{#if labelFirst}}
+        {{>afLabel_materialize}}
+      {{/if}}
+      {{> afFieldInput this.afFieldInputAtts}}
+      {{#unless labelFirst}}
+        {{>afLabel_materialize}}
+      {{/unless}}
+    {{/if}}
+    {{#if afFieldIsInvalid name=this.atts.name}}
+      <div class="red-text">
+        <i class="mdi-alert-warning"></i> {{{afFieldMessage name=this.atts.name}}}
+      </div>
+    {{/if}}
+  </div>
+</template>
+
+<template name="afLabel_materialize">
+  <label for="{{this.atts.name}}">
+    {{#if this.labelText}}{{this.labelText}}
+    {{else}}{{afFieldLabelText name=this.atts.name}}
+    {{/if}}
+  </label>
+</template>
+
+<template name="afObjectField_materialize">
+  {{#with afFieldLabelText name=this.atts.name}}
+    <div class="item item-divider">
+      {{this}}
+    </div>
+  {{/with}}
+  {{#if afFieldIsInvalid name=this.atts.name}}
+    <div class="assertive">{{{afFieldMessage name=this.atts.name}}}</div>
+  {{/if}}
+  {{> afQuickFields name=this.atts.name}}
+</template>
+
+<template name="afArrayField_materialize">
+  <div class="item item-divider">
+    {{afFieldLabelText name=this.atts.name}}
+
+    {{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+      <button type="button" class="button button-clear button-small pull-right autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">
+        Add <span class="icon ion-plus"></span>
+      </button>
+    {{/if}}
+  </div>
+  {{#if afFieldIsInvalid name=this.atts.name}}
+    <div class="item item-text-wrap">
+      <span class="assertive">{{{afFieldMessage name=this.atts.name}}}</span>
+    </div>
+  {{/if}}
+  {{#afEachArrayItem name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+    <div class="card autoform-array-item">
+      {{> afQuickField name=this.name label=false options="auto"}}
+      {{#if afArrayFieldHasMoreThanMinimum name=../atts.name minCount=../atts.minCount maxCount=../atts.maxCount}}
+        <div class="item item-divider">
+          <button type="button" class="button button-clear button-small pull-right autoform-remove-item">
+            Remove <span class="icon ion-close"></span>
+          </button>
+        </div>
+      {{/if}}
+    </div>
+  {{/afEachArrayItem}}
+
+</template>
+
+<template name="afCheckbox_materialize">
+  <div class="item item-checkbox">
+    <label class="checkbox">
+      <input type="checkbox" value="{{this.value}}" {{atts}} />
+    </label>
+    {{afFieldLabelText name=this.name}}
+  </div>
+</template>
+
+<template name="afCheckboxGroup_materialize">
+  <div class="af-checkbox-group collection" {{dsk}}>
+    {{#each this.items}}
+      <div class="collection-item">
+        <input type="checkbox" id="{{this.value}}" value="{{this.value}}" {{atts}} />
+        <label for="{{this.value}}">{{this.label}}</label>
+      </div>
+    {{/each}}
+  </div>
+</template>
+
+<template name="afCheckboxGroupInline_materialize">
+  <div class="af-checkbox-group" {{dsk}}>
+    {{#each this.items}}
+    <div class="item item-checkbox">
+      <label class="checkbox">
+        <input type="checkbox" value="{{this.value}}" {{atts}} />
+      </label>
+      {{this.label}}
+    </div>
+    {{/each}}
+  </div>
+</template>
+
+<template name="afRadio_materialize">
+  <label class="item item-radio">
+    <input type="radio" value="{{this.value}}" {{atts}} />
+    <div class="item-content disable-pointer-events">
+      {{afFieldLabelText name=this.name}}
+    </div>
+    <i class="radio-icon ion-checkmark disable-pointer-events"></i>
+  </label>
+</template>
+
+<template name="afRadioGroup_materialize">
+  <div class="af-radio-group" {{dsk}}>
+    <div class="item item-divider">
+      {{afFieldLabelText name=this.name}}
+    </div>
+    {{#each this.items}}
+      <label class="item item-radio">
+        <input type="radio" value="{{this.value}}" {{atts}} />
+        <div class="item-content disable-pointer-events">
+          {{this.label}}
+        </div>
+        <i class="radio-icon ion-checkmark disable-pointer-events"></i>
+      </label>
+    {{/each}}
+  </div>
+</template>
+
+<template name="afRadioGroupInline_materialize">
+  <div class="af-radio-group" {{dsk}}>
+    {{#each this.items}}
+      <label class="item item-radio">
+        <input type="radio" value="{{this.value}}" {{atts}} />
+        <div class="item-content disable-pointer-events">
+          {{afFieldLabelText name=this.name}}
+        </div>
+        <i class="radio-icon ion-checkmark disable-pointer-events"></i>
+      </label>
+    {{/each}}
+  </div>
+</template>
+
+<template name="afBooleanRadioGroup_materialize">
+  <div {{dsk}}>
+    <label class="item item-radio">
+      <input type="radio" value="false" name="{{this.name}}" {{falseAtts}} />
+      <div class="item-content disable-pointer-events">
+        {{#with this.atts.falseLabel}}{{this}}{{else}}False{{/with}}
+      </div>
+      <i class="radio-icon ion-checkmark disable-pointer-events"></i>
+    </label>
+    <label class="item item-radio">
+      <input type="radio" value="true" name="{{this.name}}" {{trueAtts}} />
+      <div class="item-content disable-pointer-events">
+        {{#with this.atts.trueLabel}}{{this}}{{else}}True{{/with}}
+      </div>
+      <i class="radio-icon ion-checkmark disable-pointer-events"></i>
+    </label>
+  </div>
+</template>
+
+<template name="afSelect_materialize">
+  <label class="item item-input item-select item-text-wrap">
+    <div class="input-label">
+      {{afFieldLabelText name=this.name}}
+    </div>
+    <select {{atts}}>
+      {{#each this.items}}
+        {{#if this.optgroup}}
+          <optgroup label="{{this.optgroup}}">
+            {{#each this.items}}
+            <option {{optionAtts}}>{{this.label}}</option>
+            {{/each}}
+          </optgroup>
+        {{else}}
+          <option {{optionAtts}}>{{this.label}}</option>
+        {{/if}}
+      {{/each}}
+    </select>
+  </label>
+</template>
+
+<template name="afBooleanSelect_materialize">
+  <label class="item item-input item-select item-text-wrap">
+    <div class="input-label">
+      {{afFieldLabelText name=this.name}}
+    </div>
+    <select {{atts}}>
+      {{#each this.items}}
+        <option {{optionAtts}}>{{this.label}}</option>
+      {{/each}}
+    </select>
+  </label>
+</template>
+
+<template name="afSelectMultiple_materialize">
+  <label class="item item-input item-select item-text-wrap">
+    <div class="input-label">
+      {{afFieldLabelText name=this.name}}
+    </div>
+    <select {{atts}} multiple>
+      {{#each this.items}}
+        {{#if this.optgroup}}
+          <optgroup label="{{this.optgroup}}">
+            {{#each this.items}}
+              <option {{optionAtts}}>{{this.label}}</option>
+            {{/each}}
+          </optgroup>
+        {{else}}
+          <option {{optionAtts}}>{{this.label}}</option>
+        {{/if}}
+      {{/each}}
+    </select>
+  </label>
+</template>
+
+<template name="afPickadate">
+  <input type="date" data-value="{{this.value}}" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afTextarea_materialize">
+  <textarea {{atts}}>{{this.value}}</textarea>
+</template>
+
+<template name="afInputText_materialize">
+  <input type="text" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputPassword_materialize">
+  <input type="password" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputButton_materialize">
+  <input type="button" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputSubmit_materialize">
+  <input type="submit" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputReset_materialize">
+  <input type="reset" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputDateTime_materialize">
+  <input type="datetime" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputDateTimeLocal_materialize">
+  <input type="datetime-local" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputDate_materialize">
+  <input type="date" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputMonth_materialize">
+  <input type="month" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputTime_materialize">
+  <input type="time" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputWeek_materialize">
+  <input type="week" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputNumber_materialize">
+  <input type="number" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputRange_materialize">
+  <input type="range" value="{{this.value}}" {{this.atts}}/>
+</template>
+
+<template name="afInputEmail_materialize">
+  <input type="email" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputUrl_materialize">
+  <input type="url" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputSearch_materialize">
+  <input type="search" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputTel_materialize">
+  <input type="tel" value="{{this.value}}" {{atts}}/>
+</template>
+
+<template name="afInputColor_materialize">
+  <input type="color" value="{{this.value}}" {{atts}}/>
+</template>
