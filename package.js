@@ -1,7 +1,7 @@
 Package.describe({
   name: "gildaspk:autoform-materialize",
   summary: "Materialize theme for Autoform",
-  version: "0.1.4",
+  version: "0.0.1",
   git: "https://github.com/gildaspk/meteor-autoform-materialize.git"
 });
 
