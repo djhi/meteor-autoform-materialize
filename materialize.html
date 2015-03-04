@@ -258,6 +258,17 @@
   </label>
 </template>
 
+<template name="afSwitch">
+  <div class="switch">
+    <label>
+      {{#with this.atts.falseLabel}}{{this}}{{else}}Off{{/with}}
+      <input type="checkbox" value="{{this.value}}" {{atts}}>
+      <span class="lever"></span>
+      {{#with this.atts.trueLabel}}{{this}}{{else}}On{{/with}}
+    </label>
+  </div>
+</template>
+
 <template name="afPickadate">
   <input type="date" data-value="{{this.value}}" value="{{this.value}}" {{atts}}/>
 </template>

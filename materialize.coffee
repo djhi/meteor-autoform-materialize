@@ -115,6 +115,9 @@ AutoForm.addInputType 'pickadate',
     if item then result = item.obj
     result
 
+AutoForm.addInputType 'switch',
+  template: 'afSwitch'
+
 Template.afFormGroup_materialize.rendered = ->
   form = AutoForm.find()
 
