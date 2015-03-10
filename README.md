@@ -3,6 +3,8 @@ Meteor Autoform Materialize templates
 
 Adds [materialize](http://materializecss.com/) templates for autoform.
 
+**This is a work in progress: I'll update this package**
+
 ## Setup
 
 1. `meteor add gildaspk:autoform-materialize`

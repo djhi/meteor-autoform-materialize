@@ -111,21 +111,19 @@
 </template>
 
 <template name="afCheckbox_materialize">
-  <div class="item item-checkbox">
-    <label class="checkbox">
-      <input type="checkbox" value="{{this.value}}" {{atts}} />
-    </label>
-    {{afFieldLabelText name=this.name}}
-  </div>
+  <p>
+    <input id="{{this.name}}" type="checkbox" value="{{this.value}}" {{atts}} />
+    <label for="{{this.name}}">{{afFieldLabelText name=this.name}}</label>
+  </p>
 </template>
 
 <template name="afCheckboxGroup_materialize">
   <div class="af-checkbox-group collection" {{dsk}}>
     {{#each this.items}}
-      <div class="collection-item">
-        <input type="checkbox" id="{{this.value}}" value="{{this.value}}" {{atts}} />
-        <label for="{{this.value}}">{{this.label}}</label>
-      </div>
+    <p>
+      <input id="{{this.name}}-{{this.value}}" type="checkbox" value="{{this.value}}" {{atts}} />
+      <label for="{{this.name}}-{{this.value}}">{{afFieldLabelText name=this.name}}</label>
+    </p>
     {{/each}}
   </div>
 </template>
@@ -133,39 +131,28 @@
 <template name="afCheckboxGroupInline_materialize">
   <div class="af-checkbox-group" {{dsk}}>
     {{#each this.items}}
-    <div class="item item-checkbox">
-      <label class="checkbox">
-        <input type="checkbox" value="{{this.value}}" {{atts}} />
-      </label>
-      {{this.label}}
-    </div>
+    <p>
+      <input id="{{this.name}}-{{this.value}}" type="checkbox" value="{{this.value}}" {{atts}} />
+      <label for="{{this.name}}-{{this.value}}">{{afFieldLabelText name=this.name}}</label>
+    </p>
     {{/each}}
   </div>
 </template>
 
 <template name="afRadio_materialize">
-  <label class="item item-radio">
-    <input type="radio" value="{{this.value}}" {{atts}} />
-    <div class="item-content disable-pointer-events">
-      {{afFieldLabelText name=this.name}}
-    </div>
-    <i class="radio-icon ion-checkmark disable-pointer-events"></i>
-  </label>
+  <p>
+    <input id="{{this.name}}" type="radio" value="{{this.value}}" {{atts}} />
+    <label for="{{this.name}}">{{afFieldLabelText name=this.name}}</label>
+  </p>
 </template>
 
 <template name="afRadioGroup_materialize">
   <div class="af-radio-group" {{dsk}}>
-    <div class="item item-divider">
-      {{afFieldLabelText name=this.name}}
-    </div>
     {{#each this.items}}
-      <label class="item item-radio">
-        <input type="radio" value="{{this.value}}" {{atts}} />
-        <div class="item-content disable-pointer-events">
-          {{this.label}}
-        </div>
-        <i class="radio-icon ion-checkmark disable-pointer-events"></i>
-      </label>
+    <p>
+      <input id="{{this.name}}-{{this.value}}" type="radio" value="{{this.value}}" {{atts}} />
+      <label for="{{this.name}}-{{this.value}}">{{this.label}}</label>
+    </p>
     {{/each}}
   </div>
 </template>
@@ -173,13 +160,10 @@
 <template name="afRadioGroupInline_materialize">
   <div class="af-radio-group" {{dsk}}>
     {{#each this.items}}
-      <label class="item item-radio">
-        <input type="radio" value="{{this.value}}" {{atts}} />
-        <div class="item-content disable-pointer-events">
-          {{afFieldLabelText name=this.name}}
-        </div>
-        <i class="radio-icon ion-checkmark disable-pointer-events"></i>
-      </label>
+    <p>
+      <input id="{{this.name}}--{{this.value}}" type="radio" value="{{this.value}}" {{atts}} />
+      <label for="{{this.name}}--{{this.value}}">{{this.label}}</label>
+    </p>
     {{/each}}
   </div>
 </template>
