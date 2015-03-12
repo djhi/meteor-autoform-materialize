@@ -1,0 +1,20 @@
+# 0.0.4
+
+Updated documentation.
+
+Upgraded pickadate component to work like [aldeed:autoform-bs-datetimepicker](https://github.com/aldeed/meteor-autoform-bs-datetimepicker)
+
+# 0.0.3
+
+Fixes for select elements.
+
+# 0.0.2
+
+Fixes for checkboxes and radio buttons.
+Fixes for switch component.
+
+You can now specify the `trueValue` and `falseValue` for the switch.
+
+# 0.0.1
+
+First release: basic support for materialize forms. Also support **pickadate** and **switch**
