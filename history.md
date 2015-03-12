@@ -1,3 +1,7 @@
+# 0.0.6
+
+Fixed switch `trueValue` and `falseValue` again
+
 # 0.0.5
 
 Fixed switch `trueValue` and `falseValue`

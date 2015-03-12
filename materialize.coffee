@@ -235,6 +235,9 @@ Template.afPickadate.helpers
 
 AutoForm.addInputType 'switch',
   template: 'afSwitch'
+  valueIn: (value) ->
+    console.log value
+    return value
   valueOut: ->
     input = this[0]
     checked = input.checked
@@ -245,6 +248,9 @@ AutoForm.addInputType 'switch',
 
     result
 
-Template.afSwitch.helpers
-  checked: ->
-    return this.value == this.atts.valueOn
+Template.afSwitch.rendered = ->
+  input = @$('input')
+  @autorun =>
+    data = Template.currentData()
+    trueValue = (@data.atts.trueValue || true)
+    input.prop 'checked', (data.value == trueValue)
