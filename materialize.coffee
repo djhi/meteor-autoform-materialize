@@ -117,6 +117,51 @@ AutoForm.addInputType 'pickadate',
 
 AutoForm.addInputType 'switch',
   template: 'afSwitch'
+  valueOut: ->
+    input = this[0]
+    checked = input.checked
+    if checked
+      result = input.attributes.valueOn || true
+    else
+      result = input.attributes.valueOff || false
+
+    result
+
+Template.afSwitch.helpers
+  checked: ->
+    return this.value == this.atts.valueOn
+
+
+Template.afSelect_materialize.rendered = ->
+  @$('select').material_select()
+
+  # ensure the dropdown is reset when options change
+  Tracker.autorun =>
+    options = @data.items
+    @$('select').material_select()
+
+  return
+
+Template.afBooleanSelect_materialize.rendered = ->
+  @$('select').material_select()
+
+  # ensure the dropdown is reset when options change
+  Tracker.autorun =>
+    options = @data.items
+    @$('select').material_select()
+
+  return
+
+Template.afSelectMultiple_materialize.rendered = ->
+  console.warn "materialize does not support select with multiple"
+  @$('select').material_select()
+
+  # ensure the dropdown is reset when options change
+  Tracker.autorun =>
+    options = @data.items
+    @$('select').material_select()
+
+  return
 
 Template.afFormGroup_materialize.rendered = ->
   form = AutoForm.find()
