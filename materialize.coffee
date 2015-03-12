@@ -105,33 +105,6 @@ Template['afBooleanRadioGroup_materialize'].helpers
   dsk: ->
     { 'data-schema-key': @atts['data-schema-key'] }
 
-AutoForm.addInputType 'pickadate',
-  template: 'afPickadate'
-  valueIn: (val) ->
-    formattedDate = moment(val).format "yyyy/mm/dd"
-    return formattedDate
-  valueOut: ->
-    item = this.pickadate('picker').get('select')
-    if item then result = item.obj
-    result
-
-AutoForm.addInputType 'switch',
-  template: 'afSwitch'
-  valueOut: ->
-    input = this[0]
-    checked = input.checked
-    if checked
-      result = input.attributes.valueOn || true
-    else
-      result = input.attributes.valueOff || false
-
-    result
-
-Template.afSwitch.helpers
-  checked: ->
-    return this.value == this.atts.valueOn
-
-
 Template.afSelect_materialize.rendered = ->
   @$('select').material_select()
 
@@ -176,16 +149,102 @@ Template.afFormGroup_materialize.rendered = ->
 
   return
 
+DEFAULT_PICKADATE_FORMAT = 'yyyy/mm/dd'
+DEFAULT_PICKADATE_FORMAT_SUBMIT = 'yyyy/mm/dd'
+
+AutoForm.addInputType 'pickadate',
+  template: 'afPickadate'
+  valueIn: (val) ->
+    result = val
+    # datetimepicker expects the date to represent local time,
+    # so we need to adjust it if there's a timezoneId specified
+    timezoneId = atts.timezoneId
+    if typeof timezoneId == 'string'
+      if typeof moment.tz != 'function'
+        throw new Error('If you specify a timezoneId, make sure that you\'ve added a moment-timezone package to your app')
+      if val instanceof Date
+        result = moment(AutoForm.Utility.dateToNormalizedLocalDateAndTimeString(val, timezoneId), 'YYYY-MM-DD[T]HH:mm:ss.SSS').toDate()
+    result
+
+  valueOut: ->
+    item = this.pickadate('picker').get('select')
+    if item then result = item.obj
+    result
+  valueConverters:
+    'string': (val) ->
+      if val instanceof Date then val.toString() else val
+    'stringArray': (val) ->
+      if val instanceof Date
+        return [ val.toString() ]
+      val
+    'number': (val) ->
+      if val instanceof Date then val.getTime() else val
+    'numberArray': (val) ->
+      if val instanceof Date
+        return [ val.getTime() ]
+      val
+    'dateArray': (val) ->
+      if val instanceof Date
+        return [ val ]
+      val
+  contextAdjust: (context) ->
+    if context.atts.timezoneId
+      context.atts["data-timezone-id"] = context.atts.timezoneId
+
+    delete context.atts.timezoneId
+    context
+
 Template['afPickadate'].rendered = ->
-  @$('input')
-    .pickadate(
-      formatSubmit: 'yyyy/mm/dd',
-      hiddenName: true
-      closeOnSelect: true)
-    .on('change', ->
-      $(this).pickadate('picker').close()
-    )
+  opts = _.defaults data.atts.pickadateOptions,
+    format: DEFAULT_PICKADATE_FORMAT_SUBMIT,
+    hiddenName: true
+    closeOnSelect: true
+
+  picker = @$('input').pickadate opts
+
+  @$('input').on 'change', ->
+    $(this).pickadate('picker').close()
 
   if @data.value
     @$('input').parent().find('label').addClass 'active'
+
+  # set and reactively update values
+  @autorun ->
+    data = Template.currentData()
+
+    if data.value instanceof Date
+      picker.set 'select', data.value
+    else
+      picker.set 'clear'
+
+    # set start date if there's a min in the schema
+    if data.min instanceof Date
+      picker.set 'min', data.min
+
+    # set end date if there's a max in the schema
+    if data.max instanceof Date
+      picker.set 'max', data.max
+
   return
+
+Template.afPickadate.helpers
+  atts: ->
+    atts = _.clone @atts
+    delete atts.dateTimePickerOptions;
+    atts
+
+AutoForm.addInputType 'switch',
+  template: 'afSwitch'
+  valueOut: ->
+    input = this[0]
+    checked = input.checked
+    if checked
+      result = input.attributes.valueOn || true
+    else
+      result = input.attributes.valueOff || false
+
+    result
+
+Template.afSwitch.helpers
+  checked: ->
+    return this.value == this.atts.valueOn
