@@ -239,9 +239,9 @@ AutoForm.addInputType 'switch',
     input = this[0]
     checked = input.checked
     if checked
-      result = input.attributes.valueOn || true
+      result = (input.attributes.trueValue?.value) || true
     else
-      result = input.attributes.valueOff || false
+      result = (input.attributes.falseValue?.value) || false
 
     result
 
