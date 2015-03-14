@@ -36,6 +36,12 @@ Template['afFormGroup_materialize'].helpers
     type = AutoForm.getInputType(@afFieldInputAtts)
     @skipLabel or _.contains(skipLabelTypes, type)
 
+Template.afLabel_materialize.helpers
+  atts: ->
+    # Use only atts beginning with label-
+    labelAtts = @.afFieldLabelAtts
+    labelAtts
+
 _.each [
   'afInputButton_materialize'
   'afInputSubmit_materialize'
@@ -137,10 +143,10 @@ Template.afSelectMultiple_materialize.rendered = ->
   return
 
 Template.afFormGroup_materialize.rendered = ->
-  form = AutoForm.find()
+  formId = AutoForm.getFormId()
 
   @autorun =>
-    value = AutoForm.getFieldValue form.formId, @data.atts.name
+    value = AutoForm.getFieldValue @data.name, formId
 
     if !!value
       @$('.input-field > label:not(:focus)').addClass 'active'
@@ -236,7 +242,6 @@ Template.afPickadate.helpers
 AutoForm.addInputType 'switch',
   template: 'afSwitch'
   valueIn: (value) ->
-    console.log value
     return value
   valueOut: ->
     input = this[0]

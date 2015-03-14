@@ -1,3 +1,7 @@
+# 0.0.7
+
+Updated dependency to aldeed:autoform@5.0.0
+
 # 0.0.6
 
 Fixed switch `trueValue` and `falseValue` again
