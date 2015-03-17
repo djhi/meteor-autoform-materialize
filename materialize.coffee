@@ -18,8 +18,17 @@ Template['afFormGroup_materialize'].helpers
       'boolean-select'
       'select-multiple'
     ]
-    type = AutoForm.getInputType(@afFieldInputAtts)
-    _.contains(skipLabelTypes, type)
+    type = AutoForm.getInputType(@)
+    result = _.contains(skipLabelTypes, type)
+    result
+
+  addInputField: ->
+    skipLabelTypes = [
+      'select'
+    ]
+    type = AutoForm.getInputType(@)
+    result = !_.contains(skipLabelTypes, type)
+    result
 
   skipLabel: ->
     skipLabelTypes = [
@@ -34,12 +43,14 @@ Template['afFormGroup_materialize'].helpers
       'toggle'
     ]
     type = AutoForm.getInputType(@afFieldInputAtts)
-    @skipLabel or _.contains(skipLabelTypes, type)
+    result = @skipLabel or _.contains(skipLabelTypes, type)
+    result
 
 Template.afLabel_materialize.helpers
   atts: ->
     # Use only atts beginning with label-
-    labelAtts = @.afFieldLabelAtts
+    labelAtts = @afFieldLabelAtts
+
     labelAtts
 
 _.each [
@@ -116,7 +127,7 @@ Template.afSelect_materialize.rendered = ->
 
   # ensure the dropdown is reset when options change
   Tracker.autorun =>
-    options = @data.items
+    options = @data?.items
     @$('select').material_select()
 
   return
@@ -126,7 +137,7 @@ Template.afBooleanSelect_materialize.rendered = ->
 
   # ensure the dropdown is reset when options change
   Tracker.autorun =>
-    options = @data.items
+    options = @data?.items
     @$('select').material_select()
 
   return
@@ -137,7 +148,7 @@ Template.afSelectMultiple_materialize.rendered = ->
 
   # ensure the dropdown is reset when options change
   Tracker.autorun =>
-    options = @data.items
+    options = @data?.items
     @$('select').material_select()
 
   return
@@ -201,7 +212,7 @@ AutoForm.addInputType 'pickadate',
     context
 
 Template['afPickadate'].rendered = ->
-  opts = _.defaults data.atts.pickadateOptions,
+  opts = _.defaults @data.atts.pickadateOptions,
     format: DEFAULT_PICKADATE_FORMAT_SUBMIT,
     hiddenName: true
     closeOnSelect: true

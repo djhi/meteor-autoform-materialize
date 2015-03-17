@@ -1,3 +1,8 @@
+# 0.0.8
+
+Fixes for compatibility with aldeed:autoform@5.0.0
+Added materializecss icons for afArrayField fixing #3
+
 # 0.0.7
 
 Updated dependency to aldeed:autoform@5.0.0

@@ -40,7 +40,7 @@
 </template>
 
 <template name="afFormGroup_materialize">
-  <div class="input-field">
+  <div class="{{#if addInputField}}input-field{{/if}}">
     {{#if skipLabel}}
       {{> afFieldInput this.afFieldInputAtts}}
     {{else}}
@@ -69,44 +69,50 @@
 </template>
 
 <template name="afObjectField_materialize">
-  {{#with afFieldLabelText name=this.name}}
-    <div class="item item-divider">
-      {{this}}
+  <div class="card-panel autoform-object-field">
+    <div class="card-content">
+      {{#with afFieldLabelText name=this.name}}
+        <div class="card-title">
+          {{this}}
+        </div>
+      {{/with}}
+      {{#if afFieldIsInvalid name=this.name}}
+        <div class="red-text">{{{afFieldMessage name=this.name}}}</div>
+      {{/if}}
+      {{> afQuickFields name=this.name}}
     </div>
-  {{/with}}
-  {{#if afFieldIsInvalid name=this.name}}
-    <div class="assertive">{{{afFieldMessage name=this.name}}}</div>
-  {{/if}}
-  {{> afQuickFields name=this.name}}
+  </div>
 </template>
 
 <template name="afArrayField_materialize">
-  <div class="item item-divider">
-    {{afFieldLabelText name=this.atts.name}}
+  <div class="collection">
+    <div class="collection-item">
+      {{afFieldLabelText name=this.atts.name}}
 
-    {{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
-      <button type="button" class="button button-clear button-small pull-right autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">
-        Add <span class="icon ion-plus"></span>
-      </button>
-    {{/if}}
-  </div>
-  {{#if afFieldIsInvalid name=this.atts.name}}
-    <div class="item item-text-wrap">
-      <span class="assertive">{{{afFieldMessage name=this.atts.name}}}</span>
+      {{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+        <button type="button" class="btn autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">
+          Add <i class="mdi-content-add"></i>
+        </button>
+      {{/if}}
     </div>
-  {{/if}}
-  {{#afEachArrayItem name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
-    <div class="card autoform-array-item">
-      {{> afQuickField name=this.name label=false options="auto"}}
+    {{#if afFieldIsInvalid name=this.atts.name}}
+      <div class="collection-item">
+        <span class="red-text">{{{afFieldMessage name=this.atts.name}}}</span>
+      </div>
+    {{/if}}
+    {{#afEachArrayItem name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+      <div class="collection-item">
+        {{> afQuickField name=this.name label=false options=afOptionsFromSchema}}
+      </div>
       {{#if afArrayFieldHasMoreThanMinimum name=../atts.name minCount=../atts.minCount maxCount=../atts.maxCount}}
-        <div class="item item-divider">
-          <button type="button" class="button button-clear button-small pull-right autoform-remove-item">
-            Remove <span class="icon ion-close"></span>
+        <div class="collection-item">
+          <button type="button" class="btn autoform-remove-item">
+            Remove <span class="mdi-content-clear"></span>
           </button>
         </div>
       {{/if}}
-    </div>
-  {{/afEachArrayItem}}
+    {{/afEachArrayItem}}
+  </div>
 
 </template>
 
