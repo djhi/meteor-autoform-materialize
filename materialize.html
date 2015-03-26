@@ -229,7 +229,7 @@
 
 <template name="afSwitch">
   <div class="switch">
-    <label>
+    <label for="{{atts.id}}">
       {{#with this.atts.falseLabel}}{{this}}{{else}}Off{{/with}}
       <input type="checkbox" value="{{this.value}}" {{atts}}>
       <span class="lever"></span>

@@ -1,3 +1,13 @@
+# 0.0.11
+Bug fix for #7
+
+# 0.0.10
+Added id to switch label. Useful for end-to-end testing
+
+# 0.0.9
+
+Merged @rteslaru pull-request for sliders
+
 # 0.0.8
 
 Fixes for compatibility with aldeed:autoform@5.0.0

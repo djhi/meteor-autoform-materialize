@@ -171,7 +171,7 @@ DEFAULT_PICKADATE_FORMAT_SUBMIT = 'yyyy/mm/dd'
 
 AutoForm.addInputType 'pickadate',
   template: 'afPickadate'
-  valueIn: (val) ->
+  valueIn: (val, atts) ->
     result = val
     # datetimepicker expects the date to represent local time,
     # so we need to adjust it if there's a timezoneId specified
@@ -270,3 +270,7 @@ Template.afSwitch.rendered = ->
     data = Template.currentData()
     trueValue = (@data.atts.trueValue || true)
     input.prop 'checked', (data.value == trueValue)
+
+Template.afSwitch.helpers
+  atts: ->
+    _.extend @atts, id: @atts.name

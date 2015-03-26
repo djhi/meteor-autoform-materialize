@@ -136,3 +136,6 @@ MySchema = new SimpleSchema({
   }
 });
 ```
+## Contributors
+- Gildas Garcia (@djhi)
+- Razvan Teslaru (@rteslaru)
