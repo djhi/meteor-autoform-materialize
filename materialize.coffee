@@ -212,7 +212,8 @@ AutoForm.addInputType 'pickadate',
     context
 
 Template['afPickadate'].rendered = ->
-  opts = _.defaults @data.atts.pickadateOptions,
+  userOptions = @data.atts.pickadateOptions or {}
+  opts = _.defaults userOptions,
     format: DEFAULT_PICKADATE_FORMAT_SUBMIT,
     hiddenName: true
     closeOnSelect: true
