@@ -218,7 +218,8 @@ Template['afPickadate'].rendered = ->
     hiddenName: true
     closeOnSelect: true
 
-  picker = @$('input').pickadate opts
+  input = @$('input').pickadate opts
+  picker = input.pickadate 'picker'
 
   @$('input').on 'change', ->
     $(this).pickadate('picker').close()

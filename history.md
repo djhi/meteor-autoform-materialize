@@ -1,8 +1,14 @@
+# 0.0.13
+
+Fix for checkboxes and radios labels. Fix #8
+
 # 0.0.12
 # 0.0.11
+
 Bug fix for #7
 
 # 0.0.10
+
 Added id to switch label. Useful for end-to-end testing
 
 # 0.0.9
