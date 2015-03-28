@@ -1,3 +1,7 @@
+# 0.0.14
+
+Updated autoform to 5.1.1
+
 # 0.0.13
 
 Fix for checkboxes and radios labels. Fix #8
