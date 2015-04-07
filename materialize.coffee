@@ -126,6 +126,12 @@ Template['afBooleanRadioGroup_materialize'].helpers
   dsk: ->
     { 'data-schema-key': @atts['data-schema-key'] }
 
+Template['afSelectMultiple_materialize'].helpers
+  atts: ->
+    atts = _.clone(@atts)
+    atts = AutoForm.Utility.addClass atts, 'browser-default'
+    return atts
+
 Template.afSelect_materialize.rendered = ->
   @$('select').material_select()
 
@@ -137,17 +143,6 @@ Template.afSelect_materialize.rendered = ->
   return
 
 Template.afBooleanSelect_materialize.rendered = ->
-  @$('select').material_select()
-
-  # ensure the dropdown is reset when options change
-  Tracker.autorun =>
-    options = @data?.items
-    @$('select').material_select()
-
-  return
-
-Template.afSelectMultiple_materialize.rendered = ->
-  console.warn "materialize does not support select with multiple"
   @$('select').material_select()
 
   # ensure the dropdown is reset when options change

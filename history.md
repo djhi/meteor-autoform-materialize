@@ -1,3 +1,7 @@
+# 0.0.16
+
+Support for select-multiple, fixing #10
+
 # 0.0.15
 
 Fix for #8
