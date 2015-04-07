@@ -95,6 +95,10 @@ _.each [
       return atts
     dsk: ->
       { 'data-schema-key': @atts['data-schema-key'] }
+    itemAtts: ->
+      atts = _.clone(@atts)
+      atts.id = atts.id + "_" + @_id
+      return atts
   return
 
 selectHelpers = optionAtts: ->
