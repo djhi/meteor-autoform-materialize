@@ -139,3 +139,6 @@ MySchema = new SimpleSchema({
 ## Contributors
 - Gildas Garcia (@djhi)
 - Razvan Teslaru (@rteslaru)
+
+## License
+autoform-materialize is licensed under the [MIT Licence](LICENSE), courtesy of [marmelab](http://marmelab.com).

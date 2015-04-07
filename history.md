@@ -1,3 +1,7 @@
+# 0.0.15
+
+Fix for #8
+
 # 0.0.14
 
 Updated autoform to 5.1.1
