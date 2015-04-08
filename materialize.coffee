@@ -1,6 +1,25 @@
 ###
 * Template helpers for "materialize" template
 ###
+
+removeClass = (atts, klass) ->
+  if typeof atts["class"] == "string"
+    atts["class"].replace klass , ''
+  atts
+
+toggleInvalidClass = (atts) ->
+  formId = AutoForm.getFormId()
+  ss = AutoForm.getFormSchema()
+  context = ss.namedContext formId
+  isInvalid = context.keyIsInvalid atts.name
+
+  if isInvalid
+    atts = AutoForm.Utility.addClass atts, "invalid"
+  else
+    atts = removeClass atts, "invalid"
+  atts
+
+
 Template['quickForm_materialize'].helpers
   submitButtonAtts: ->
     qfAtts = @atts
@@ -42,7 +61,7 @@ Template['afFormGroup_materialize'].helpers
       'boolean-radio-group'
       'toggle'
     ]
-    type = AutoForm.getInputType(@afFieldInputAtts)
+    type = AutoForm.getInputType(@)
     result = @skipLabel or _.contains(skipLabelTypes, type)
     result
 
@@ -52,6 +71,39 @@ Template.afLabel_materialize.helpers
     labelAtts = @afFieldLabelAtts
 
     labelAtts
+
+_.each [
+  "afCheckbox_materialize"
+  "afSelect_materialize"
+  "afBooleanRadioGroup_materialize"
+  "afBooleanSelect_materialize"
+  "afSelectMultiple_materialize"
+  "afSwitch"
+  "afTextarea_materialize"
+  "afInputText_materialize"
+  "afInputPassword_materialize"
+  "afInputButton_materialize"
+  "afInputSubmit_materialize"
+  "afInputReset_materialize"
+  "afInputDateTime_materialize"
+  "afInputDateTimeLocal_materialize"
+  "afInputDate_materialize"
+  "afInputMonth_materialize"
+  "afInputTime_materialize"
+  "afInputWeek_materialize"
+  "afInputNumber_materialize"
+  "afInputRange_materialize"
+  "afInputEmail_materialize"
+  "afInputUrl_materialize"
+  "afInputSearch_materialize"
+  "afInputTel_materialize"
+  "afInputColor_materialize"
+], (tmplName) ->
+  Template[tmplName].helpers atts: ->
+    atts = _.clone(@atts)
+    atts = toggleInvalidClass atts
+    atts
+  return
 
 _.each [
   'afInputButton_materialize'
@@ -65,20 +117,15 @@ _.each [
     atts
   return
 
-Template['afRadio_materialize'].helpers
-  atts: ->
-    atts = _.clone(@atts)
-    if @selected
-      atts.checked = ''
-    atts
-
 Template['afTextarea_materialize'].helpers
   atts: ->
     atts = _.clone(@atts)
     atts = AutoForm.Utility.addClass(atts, "materialize-textarea")
+    atts = toggleInvalidClass atts
     atts
 
 _.each [
+  'afRadio_materialize'
   'afCheckboxGroup_materialize'
   'afRadioGroup_materialize'
   'afCheckboxGroupInline_materialize'
@@ -87,6 +134,7 @@ _.each [
   Template[tmplName].helpers
     atts: ->
       atts = _.clone(@atts)
+      atts = toggleInvalidClass atts
       if @selected
         atts.checked = ''
       # remove data-schema-key attribute because we put it
@@ -130,7 +178,8 @@ Template['afSelectMultiple_materialize'].helpers
   atts: ->
     atts = _.clone(@atts)
     atts = AutoForm.Utility.addClass atts, 'browser-default'
-    return atts
+    atts = toggleInvalidClass atts
+    atts
 
 Template.afSelect_materialize.rendered = ->
   @$('select').material_select()

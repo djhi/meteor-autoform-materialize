@@ -1,3 +1,9 @@
+# 0.0.17
+
+Add the `invalid` class when needed. Fix #13
+
+*This does not work for select and pickadate: PR welcome*
+
 # 0.0.16
 
 Support for select-multiple, fixing #10
