@@ -32,21 +32,23 @@ Template['quickForm_materialize'].helpers
 
 Template['afFormGroup_materialize'].helpers
   labelFirst: ->
-    skipLabelTypes = [
+    labelFirstTypes = [
       'select'
       'boolean-select'
       'select-multiple'
     ]
     type = AutoForm.getInputType(@)
-    result = _.contains(skipLabelTypes, type)
+    result = _.contains(labelFirstTypes, type)
     result
 
   addInputField: ->
-    skipLabelTypes = [
+    skipInputType = [
       'select'
+      'select-multiple'
+      'switch'
     ]
     type = AutoForm.getInputType(@)
-    result = !_.contains(skipLabelTypes, type)
+    result = !_.contains(skipInputType, type)
     result
 
   skipLabel: ->
@@ -60,6 +62,7 @@ Template['afFormGroup_materialize'].helpers
       'boolean-radio'
       'boolean-radio-group'
       'toggle'
+      'switch'
     ]
     type = AutoForm.getInputType(@)
     result = @skipLabel or _.contains(skipLabelTypes, type)
