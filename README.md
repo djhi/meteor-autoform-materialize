@@ -37,7 +37,7 @@ MySchema = new SimpleSchema({
   dateFieldName: {
     type: Date
     autoform: {
-      type="pickadate"
+      type:"pickadate"
     }
   }
 });
@@ -90,7 +90,7 @@ MySchema = new SimpleSchema({
   booleanFieldName: {
     type: Boolean
     autoform: {
-      type="switch"
+      type:"switch"
     }
   }
 });
@@ -109,9 +109,9 @@ MySchema = new SimpleSchema({
   booleanFieldName: {
     type: Boolean
     autoform: {
-      type="switch"
-      trueLabel="Online"
-      falseLabel="Offline"
+      type:"switch"
+      trueLabel:"Online"
+      falseLabel:"Offline"
     }
   }
 });
@@ -129,9 +129,9 @@ MySchema = new SimpleSchema({
   booleanFieldName: {
     type: Boolean
     autoform: {
-      type="switch"
-      trueValue="online"
-      falseValue="offline"
+      type:"switch"
+      trueValue:"online"
+      falseValue:"offline"
     }
   }
 });
