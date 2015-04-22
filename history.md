@@ -1,3 +1,9 @@
+# 0.0.18
+
+- Fix #14
+- Fix #15
+- Fix #16
+
 # 0.0.17
 
 Add the `invalid` class when needed. Fix #13
