@@ -297,8 +297,8 @@ Template['afPickadate'].rendered = ->
 Template.afPickadate.helpers
   atts: ->
     atts = _.clone @atts
-    delete atts.dateTimePickerOptions;
-    delete atts.pickadateOptions;
+    delete atts.dateTimePickerOptions
+    delete atts.pickadateOptions
     atts
 
 AutoForm.addInputType 'switch',
