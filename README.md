@@ -23,7 +23,7 @@ You must add materialize CSS and JavaScript yourself. Some packages can help:
 ## Additional type
 
 ### PickADate
-Materialize uses [pickadate](https://github.com/gildaspk/meteor-autoform-materialize/blob/master/amsul.ca/pickadate.js/date) for date inputs.
+Materialize uses [pickadate](https://github.com/amsul/pickadate.js) for date inputs.
 
 You can apply it directly in your template:
 
