@@ -19,6 +19,8 @@ You must add materialize CSS and JavaScript yourself. Some packages can help:
 - [d0minikk:materialize-meteor](https://atmospherejs.com/d0minikk/materialize-meteor) `meteor add d0minikk:materialize-meteor`
 - [grigio:materialize-sass](https://atmospherejs.com/grigio/materialize-sass) `meteor add grigio:materialize-sass`
   Note this one doesn't add the scripts but allows you to customize the CSS with SASS
+- [yang2007chun:materialize-scss](https://atmospherejs.com/yang2007chun/materialize-scss) `meteor add yang2007chun:materialize-scss`
+  Note this one allows you to customize with SASS
 
 ## Additional type
 
