@@ -1,0 +1,21 @@
+<template name="afFormGroup_materialize">
+  <div class="{{#if addInputField}}input-field{{/if}}">
+    {{#if skipLabel}}
+      {{> afFieldInput this.afFieldInputAtts}}
+    {{else}}
+      {{#if labelFirst}}
+        {{>afLabel_materialize}}
+      {{/if}}
+      {{> afFieldInput this.afFieldInputAtts}}
+      {{#unless labelFirst}}
+        {{>afLabel_materialize this}}
+      {{/unless}}
+    {{/if}}
+    {{#if afFieldIsInvalid name=this.name}}
+      <div class="red-text">
+        <i class="mdi-alert-warning"></i> {{{afFieldMessage name=this.name}}}
+      </div>
+    {{/if}}
+  </div>
+</template>
+

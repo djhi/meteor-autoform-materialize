@@ -1,0 +1,12 @@
+<template name="autoForm_materialize">
+  {{#unless afDestroyUpdateForm}}
+    <form {{atts}}>
+      <div class="row">
+        {{#with innerContext ..}}
+          {{> UI.contentBlock this}}
+        {{/with}}
+      </div>
+    </form>
+  {{/unless}}
+</template>
+

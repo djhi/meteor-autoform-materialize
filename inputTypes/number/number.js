@@ -1,0 +1,1 @@
+Template.afInputNumber_materialize.helpers(Utility.helpersAttrsToggleInvalidClass);

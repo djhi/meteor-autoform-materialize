@@ -1,0 +1,1 @@
+Template.afCheckboxGroupInline_materialize.helpers(Utility.helpersGroup);

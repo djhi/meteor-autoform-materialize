@@ -1,0 +1,1 @@
+Template.afRadioGroupInline_materialize.helpers(Utility.helpersGroup);

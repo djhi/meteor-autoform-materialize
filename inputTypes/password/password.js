@@ -1,0 +1,1 @@
+Template.afInputPassword_materialize.helpers(Utility.helpersAttrsToggleInvalidClass);

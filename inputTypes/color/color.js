@@ -1,0 +1,1 @@
+Template.afInputColor_materialize.helpers(Utility.helpersAttrsToggleInvalidClass);

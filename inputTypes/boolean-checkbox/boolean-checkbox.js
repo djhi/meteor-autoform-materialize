@@ -1,0 +1,1 @@
+Template.afCheckbox_materialize.helpers(Utility.helpersAttrsToggleInvalidClass);

@@ -1,0 +1,5 @@
+Template.afBooleanSelect_materialize.helpers(Utility.helpersAttrsToggleInvalidClass);
+
+Template.afBooleanSelect_materialize.helpers(Utility.helpersSelect);
+
+Template.afBooleanSelect_materialize.onRendered(Utility.initializeSelect);
