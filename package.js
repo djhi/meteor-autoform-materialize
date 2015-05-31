@@ -7,7 +7,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom("1.0");
-  api.use(["templating", "underscore", "coffeescript"], "client");
+  api.use(["templating", "underscore"], "client");
   api.use("aldeed:autoform@5.1.1");
   api.addFiles([
     // utility
