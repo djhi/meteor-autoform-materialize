@@ -1,4 +1,6 @@
-Template.afSelectMultiple_materialize.helpers(Utility.helpers.optionAtts);
+Template.afSelectMultiple_materialize.helpers({
+  optionAtts: Utility.helpers.optionAtts
+});
 
 Template.afSelectMultiple_materialize.helpers({
   atts: function() {

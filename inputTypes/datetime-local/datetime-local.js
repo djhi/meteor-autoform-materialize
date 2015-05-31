@@ -1,1 +1,3 @@
-Template.afInputDateTimeLocal_materialize.helpers(Utility.helpers.attsToggleInvalidClass);
+Template.afInputDateTimeLocal_materialize.helpers({
+  attrs: Utility.helpers.attsToggleInvalidClass
+});

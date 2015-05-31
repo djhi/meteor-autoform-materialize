@@ -1,1 +1,5 @@
-Template.afCheckboxGroup_materialize.helpers(Utility.helpersGroup);
+Template.afCheckboxGroup_materialize.helpers({
+  atts:     Utility.helpers.attsCheckSelected,
+  dsk:      Utility.helpers.dsk,
+  itemAtts: Utility.helpers.itemAttsWithUniqId
+});

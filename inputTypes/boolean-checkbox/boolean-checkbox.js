@@ -1,1 +1,3 @@
-Template.afCheckbox_materialize.helpers(Utility.helpers.attsToggleInvalidClass);
+Template.afCheckbox_materialize.helpers({
+ atts: Utility.helpers.attsToggleInvalidClass
+});

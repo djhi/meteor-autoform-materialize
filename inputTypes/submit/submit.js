@@ -1,1 +1,3 @@
-  Template.afInputSubmit_materialize.helpers(Utility.helpers.attsAddClass);
+Template.afInputSubmit_materialize.helpers({
+  atts: Utility.helpers.attsAddClass
+});

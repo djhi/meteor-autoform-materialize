@@ -22,7 +22,6 @@ Package.onUse(function(api) {
     'utilities/helpers/atts-check-selected.js',
     'utilities/helpers/atts-add-class.js',
     'utilities/helpers/option-atts.js',
-    'utilities/helpers-group.js',
     // input types
     'inputTypes/boolean-checkbox/boolean-checkbox.html',
     'inputTypes/boolean-checkbox/boolean-checkbox.js',
