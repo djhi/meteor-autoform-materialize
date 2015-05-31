@@ -1,4 +1,4 @@
-Utility.helpersAttrsAddClass = {
+Utility.helpers.attsAddClass = {
   atts: function() {
     var atts;
     atts = _.clone(this.atts);

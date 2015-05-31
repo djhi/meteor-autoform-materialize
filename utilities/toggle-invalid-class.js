@@ -7,7 +7,7 @@ Utility.toggleInvalidClass = function(atts) {
   if (isInvalid) {
     atts = AutoForm.Utility.addClass(atts, "invalid");
   } else {
-    atts = Utility.removeClass(atts, "invalid");
+    atts = removeClass(atts, "invalid");
   }
   return atts;
 };

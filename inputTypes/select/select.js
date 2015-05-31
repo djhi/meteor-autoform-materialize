@@ -1,4 +1,4 @@
-Template.afSelect_materialize.helpers(Utility.helpersAttrsToggleInvalidClass);
-Template.afSelect_materialize.helpers(Utility.helpersSelect);
+Template.afSelect_materialize.helpers(Utility.helpers.attsToggleInvalidClass);
+Template.afSelect_materialize.helpers(Utility.helpers.optionAtts);
 
 Template.afSelect_materialize.onRendered(Utility.initializeSelect);

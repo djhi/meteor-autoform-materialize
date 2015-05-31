@@ -14,9 +14,14 @@ Package.onUse(function(api) {
     'utilities/initialize.js',
     'utilities/toggle-invalid-class.js',
     'utilities/initialize-select.js',
-    'utilities/helpers-select.js',
-    'utilities/helpers-attrs-toggle-invalid-class.js',
-    'utilities/helpers-attrs-add-class.js',
+    // utility template helpers
+    'utilities/helpers/initialize.js',
+    'utilities/helpers/dsk.js',
+    'utilities/helpers/item-atts-with-uniq-id.js',
+    'utilities/helpers/atts-toggle-invalid-class.js',
+    'utilities/helpers/atts-check-selected.js',
+    'utilities/helpers/atts-add-class.js',
+    'utilities/helpers/option-atts.js',
     'utilities/helpers-group.js',
     // input types
     'inputTypes/boolean-checkbox/boolean-checkbox.html',

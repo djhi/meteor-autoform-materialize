@@ -1,1 +1,1 @@
-Template.afInputWeek_materialize.helpers(Utility.helpersAttrsToggleInvalidClass);
+Template.afInputWeek_materialize.helpers(Utility.helpers.attsToggleInvalidClass);

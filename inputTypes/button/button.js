@@ -1,1 +1,1 @@
-Template.afInputButton_materialize.helpers(Utility.helpersAttrsAddClass);
+Template.afInputButton_materialize.helpers(Utility.helpers.attsAddClass);

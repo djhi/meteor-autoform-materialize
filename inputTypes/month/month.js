@@ -1,1 +1,1 @@
-Template.afInputMonth_materialize.helpers(Utility.helpersAttrsToggleInvalidClass);
+Template.afInputMonth_materialize.helpers(Utility.helpers.attsToggleInvalidClass);

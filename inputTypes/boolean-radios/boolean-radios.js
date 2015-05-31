@@ -1,4 +1,4 @@
-Template.afBooleanRadioGroup_materialize.helpers(Utility.helpersAttrsToggleInvalidClass);
+Template.afBooleanRadioGroup_materialize.helpers(Utility.helpers.attsToggleInvalidClass);
 
 Template.afBooleanRadioGroup_materialize.helpers({
   falseAtts: function() {

@@ -1,1 +1,1 @@
-Template.afInputText_materialize.helpers(Utility.helpersAttrsToggleInvalidClass);
+Template.afInputText_materialize.helpers(Utility.helpers.attsToggleInvalidClass);

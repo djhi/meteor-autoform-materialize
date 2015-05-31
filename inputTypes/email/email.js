@@ -1,1 +1,1 @@
-Template.afInputEmail_materialize.helpers(Utility.helpersAttrsToggleInvalidClass);
+Template.afInputEmail_materialize.helpers(Utility.helpers.attsToggleInvalidClass);

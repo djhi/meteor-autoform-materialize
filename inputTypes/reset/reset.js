@@ -1,1 +1,1 @@
-  Template.afInputReset_materialize.helpers(Utility.helpersAttrsAddClass);
+  Template.afInputReset_materialize.helpers(Utility.helpers.attsAddClass);
