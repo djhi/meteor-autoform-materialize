@@ -2,7 +2,7 @@
   <div class="af-radio-group {{rowColumnAtts}}" {{dsk}}>
     <p class="{{falseColumnAtts}}">
       <input id="{{atts.id}}_false" type="radio" value="false" {{falseAtts}} />
-      <label for="{{atts.id}}_false">{{#with this.atts.trueLabel}}{{this}}{{else}}False{{/with}}</label>
+      <label for="{{atts.id}}_false">{{#with this.atts.falseLabel}}{{this}}{{else}}False{{/with}}</label>
     </p>
     <p class="{{trueColumnAtts}}">
       <input id="{{atts.id}}_true" type="radio" value="true" {{trueAtts}} />

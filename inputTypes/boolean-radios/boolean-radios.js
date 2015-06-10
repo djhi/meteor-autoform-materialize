@@ -5,7 +5,7 @@ Template.afBooleanRadioGroup_materialize.helpers({
 Template.afBooleanRadioGroup_materialize.helpers({
   falseAtts: function() {
     var atts;
-    atts = _.omit(this.atts, 'trueLabel', 'falseLabel', 'data-schema-key');
+    atts = _.omit(this.atts, 'id', 'trueLabel', 'falseLabel', 'data-schema-key');
     if (this.value === false) {
       atts.checked = '';
     }
@@ -13,7 +13,7 @@ Template.afBooleanRadioGroup_materialize.helpers({
   },
   trueAtts: function() {
     var atts;
-    atts = _.omit(this.atts, 'trueLabel', 'falseLabel', 'data-schema-key');
+    atts = _.omit(this.atts, 'id', 'trueLabel', 'falseLabel', 'data-schema-key');
     if (this.value === true) {
       atts.checked = '';
     }

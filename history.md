@@ -1,3 +1,10 @@
+# 0.0.19
+
+- Fix #18 (see [playground](http://autoform-materialize-playground.meteor.com/))
+- Fix #29 (thanks to @coniel)
+- Fix #22 (thanks to @Chun-Yang)
+- Fix #26 (thanks to @Chun-Yang  ,see [playground](http://autoform-materialize-playground.meteor.com/))
+
 # 0.0.18
 
 - Fix #14
