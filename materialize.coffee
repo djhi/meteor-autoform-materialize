@@ -204,6 +204,15 @@ Template.afBooleanSelect_materialize.rendered = ->
 
   return
 
+Template.afTextarea_materialize.rendered = ->
+  @$('textarea').characterCounter()
+
+Template.afInputText_materialize.rendered = ->
+  @$('input').characterCounter()
+
+Template.afInputPassword_materialize.rendered = ->
+  @$('input').characterCounter()
+
 Template.afFormGroup_materialize.rendered = ->
   formId = AutoForm.getFormId()
 
