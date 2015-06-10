@@ -1,0 +1,11 @@
+<template name="afQuickField_materialize">
+  {{#if isGroup atts=this}}
+    {{> afObjectField_materialize}}
+  {{else}}
+    {{#if isFieldArray atts=this}}
+      {{> afArrayField_materialize}}
+    {{else}}
+      {{> afFormGroup_materialize groupAtts}}
+    {{/if}}
+  {{/if}}
+</template>
