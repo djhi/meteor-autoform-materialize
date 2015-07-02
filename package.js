@@ -77,6 +77,7 @@ Package.onUse(function(api) {
     'inputTypes/text/text.html',
     'inputTypes/text/text.js',
     'inputTypes/textarea/textarea.html',
+    'inputTypes/textarea/textarea.js',
     'inputTypes/time/time.html',
     'inputTypes/time/time.js',
     'inputTypes/url/url.html',
