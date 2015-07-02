@@ -1,10 +1,12 @@
 <template name="afRadioGroupInline_materialize">
-  <div class="af-radio-group" {{dsk}}>
-    {{#each this.items}}
-    <p>
-      <input type="radio" value="{{this.value}}" {{itemAtts}} />
-      <label for="{{itemAtts.id}}">{{this.label}}</label>
-    </p>
-    {{/each}}
-  </div>
+    <div class="af-radio-group" {{dsk}}>
+        <p>
+            {{#each this.items}}
+                <span>
+                    <input type="radio" value="{{this.value}}" {{itemAtts}} />
+                    <label for="{{itemAtts.id}}">{{this.label}}</label>
+                </span>
+            {{/each}}
+        </p>
+    </div>
 </template>
