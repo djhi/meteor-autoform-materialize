@@ -1,3 +1,8 @@
+# 0.0.20
+ - Lots of fixes (haven't tracked the bugs numbers this time...)
+
+Thanks to @coniel for his contribution
+
 # 0.0.19
 
 - Fix #18 (see [playground](http://autoform-materialize-playground.meteor.com/))
