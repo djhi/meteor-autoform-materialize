@@ -40,7 +40,8 @@ Template.afFormGroup_materialize.rendered = function() {
     return function() {
       var value;
       value = AutoForm.getFieldValue(_this.data.name, formId);
-      if (!!value) {
+      placeholder = _this.data.afFieldInputAtts.placeholder;
+      if (!!value || !!placeholder) {
         return _this.$('.input-field > label:not(:focus)').addClass('active');
       } else {
         return _this.$('.input-field > label:not(:focus)').removeClass('active');
