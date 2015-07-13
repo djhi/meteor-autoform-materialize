@@ -44,7 +44,8 @@ Template.afFormGroup_materialize.rendered = function() {
             var inputValue = AutoForm.getInputValue(_this.find('input'));
             var type = AutoForm.getInputType(_this.data);
             var placeholder = _this.data.afFieldInputAtts.placeholder;
-            var skipLabelTypes = [
+            var skipActiveLabelTypes = [
+                'select',
                 'checkbox',
                 'checkbox-group',
                 'boolean-checkbox',
@@ -56,7 +57,7 @@ Template.afFormGroup_materialize.rendered = function() {
                 'switch'
             ];
 
-            if (!_.contains(skipLabelTypes, type)) {
+            if (!_.contains(skipActiveLabelTypes, type)) {
                 if (!!value || !!inputValue || !!placeholder) {
                     return _this.$('.input-field > label:not(:focus)').addClass('active');
                 } else {
