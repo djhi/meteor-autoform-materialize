@@ -2,14 +2,16 @@
   {{#autoForm this.qfAutoFormContext}}
     {{> afQuickFields}}
     {{#if qfShouldRenderButton}}
-      <div class="col s12">
-        <button type="submit" {{submitButtonAtts}}>
-          {{#with ../atts.buttonContent}}
-            {{this}}
-          {{else}}
-            Submit
-          {{/with}}
-        </button>
+      <div class="row">
+        <div class="col s12">
+          <button type="submit" {{submitButtonAtts}}>
+            {{#with ../atts.buttonContent}}
+              {{this}}
+            {{else}}
+              Submit
+            {{/with}}
+          </button>
+        </div>
       </div>
     {{/if}}
   {{/autoForm}}
