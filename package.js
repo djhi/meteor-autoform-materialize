@@ -6,9 +6,11 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
+  var both = ['web', 'server'];
+
   api.versionsFrom("1.0");
   api.use(["templating", "underscore"], "client");
-  api.use("aldeed:autoform@5.1.1");
+  api.use(["aldeed:autoform@5.1.1", "cfs:autoform"], both);
   api.addFiles([
     // utility
     'utilities/initialize.js',
