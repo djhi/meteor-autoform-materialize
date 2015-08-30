@@ -1,4 +1,7 @@
 Template.afCheckboxGroupInline_materialize.helpers({
     dsk:      Utility.helpers.dsk,
-    itemAtts: Utility.helpers.itemAttsWithUniqId
+    itemAtts: function() {
+        var atts = Utility.helpers.itemAttsWithUniqId(this);
+        return Utility.helpers.attsCheckSelected(this);
+    }
 });
