@@ -1,3 +1,5 @@
 Template.afInputColor_materialize.helpers({
-  attrs: Utility.helpers.attsToggleInvalidClass
+    atts: function() {
+        return Utility.helpers.attsToggleInvalidClass(this.atts);
+    }
 });

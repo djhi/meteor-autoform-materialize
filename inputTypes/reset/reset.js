@@ -1,3 +1,5 @@
 Template.afInputReset_materialize.helpers({
-  atts: Utility.helpers.attsAddClass
+    atts: function() {
+        return Utility.helpers.attsAddClass(this.atts);
+    }
 });

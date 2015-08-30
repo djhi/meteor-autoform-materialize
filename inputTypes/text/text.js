@@ -1,5 +1,7 @@
 Template.afInputText_materialize.helpers({
-  attrs: Utility.helpers.attsToggleInvalidClass
+    atts: function() {
+        return Utility.helpers.attsToggleInvalidClass(this.atts);
+    }
 });
 
 Template.afInputText_materialize.rendered = function() {

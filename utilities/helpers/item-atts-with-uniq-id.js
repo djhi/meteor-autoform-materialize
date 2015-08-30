@@ -1,7 +1,7 @@
-Utility.helpers.itemAttsWithUniqId = function() {
-  var atts;
-  atts = _.clone(this.atts);
-  atts.id = atts.id + "_" + this._id;
-  delete atts['data-schema-key'];
-  return atts;
+Utility.helpers.itemAttsWithUniqId = function(atts) {
+  var result;
+  result = _.clone(atts);
+  result.id = result.id + "_" + this._id;
+  delete result['data-schema-key'];
+  return result;
 }

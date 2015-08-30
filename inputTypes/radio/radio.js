@@ -1,4 +1,6 @@
 Template.afRadio_materialize.helpers({
-  atts:     Utility.helpers.attsCheckSelected,
-  dsk:      Utility.helpers.dsk,
+    dsk: Utility.helpers.dsk,
+    atts: function() {
+        return Utility.helpers.attsCheckSelected(this.atts, this.selected);
+    }
 });

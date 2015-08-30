@@ -1,11 +1,10 @@
 Utility.helpers.optionAtts = function() {
-  var atts, item;
-  item = this;
-  atts = {
-    value: item.value
-  };
-  if (item.selected) {
-    atts.selected = '';
-  }
-  return atts;
+    var atts = {
+        value: this.value
+    };
+
+    if (this.selected) {
+        atts.selected = '';
+    }
+    return atts;
 };
