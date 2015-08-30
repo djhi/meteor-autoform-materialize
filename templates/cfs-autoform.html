@@ -1,0 +1,9 @@
+<template name="cfsFileField_materialize">
+  <input type="file" class="cfsaf-hidden" data-cfs-collection="{{this.atts.collection}}" {{fileInputAtts}}>
+  <input type="text" readonly {{textInputAtts}}>
+</template>
+
+<template name="cfsFilesField_materialize">
+  <input type="file" class="cfsaf-hidden" multiple data-cfs-collection="{{this.atts.collection}}" {{fileInputAtts}}>
+  <input type="text" readonly {{textInputAtts}}>
+</template>
