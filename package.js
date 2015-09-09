@@ -1,14 +1,14 @@
 Package.describe({
-  name: "gildaspk:autoform-materialize",
+  name: "poetic:autoform-materialize",
   summary: "Materialize theme for Autoform",
-  version: "0.0.22",
-  git: "https://github.com/djhi/meteor-autoform-materialize.git"
-});
+  version: "0.1.0",
+  git: "https://github.com/poetic/meteor-autoform-materialize.git"
+})
 
 Package.onUse(function(api) {
-  api.versionsFrom("1.0");
-  api.use(["templating", "underscore"], "client");
-  api.use("aldeed:autoform@5.1.1");
+  api.versionsFrom("1.0")
+  api.use(["templating", "underscore"], "client")
+  api.use("aldeed:autoform@5.1.1")
   api.addFiles([
     // utility
     'utilities/initialize.js',
@@ -100,5 +100,5 @@ Package.onUse(function(api) {
     'components/afFormGroup/afFormGroup.js',
     'components/afObjectField/afObjectField.html',
     'components/afQuickField/afQuickField.html'
-  ], "client");
-});
+  ], "client")
+})
