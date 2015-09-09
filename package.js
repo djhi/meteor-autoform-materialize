@@ -11,17 +11,16 @@ Package.onUse(function(api) {
   api.use("aldeed:autoform@5.1.1")
   api.addFiles([
     // utility
-    'utilities/initialize.js',
+    'utilities/utility.js',
     'utilities/toggle-invalid-class.js',
     'utilities/initialize-select.js',
     // utility template helpers
-    'utilities/helpers/initialize.js',
-    'utilities/helpers/dsk.js',
-    'utilities/helpers/item-atts-with-uniq-id.js',
-    'utilities/helpers/atts-toggle-invalid-class.js',
-    'utilities/helpers/atts-check-selected.js',
-    'utilities/helpers/atts-add-class.js',
-    'utilities/helpers/option-atts.js',
+    'utilities/dsk.js',
+    'utilities/item-atts-with-uniq-id.js',
+    'utilities/atts-toggle-invalid-class.js',
+    'utilities/atts-check-selected.js',
+    'utilities/atts-add-class.js',
+    'utilities/option-atts.js',
     // input types
     'inputTypes/boolean-checkbox/boolean-checkbox.html',
     'inputTypes/boolean-checkbox/boolean-checkbox.js',

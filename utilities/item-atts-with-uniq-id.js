@@ -1,4 +1,4 @@
-Utility.helpers.itemAttsWithUniqId = function() {
+Utility.itemAttsWithUniqId = function() {
   var atts;
   atts = _.clone(this.atts);
   atts.id = atts.id + "_" + this._id;

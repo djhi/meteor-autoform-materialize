@@ -1,4 +1,4 @@
-Utility.helpers.optionAtts = function() {
+Utility.optionAtts = function() {
   var atts, item;
   item = this;
   atts = {

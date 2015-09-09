@@ -1,5 +1,5 @@
 Template.afInputPassword_materialize.helpers({
-  attrs: Utility.helpers.attsToggleInvalidClass
+  attrs: Utility.attsToggleInvalidClass
 });
 
 Template.afInputPassword_materialize.rendered = function() {
