@@ -16,7 +16,7 @@ Package.onUse(function(api) {
     'utilities/initialize-select.js',
     // utility template helpers
     'utilities/dsk.js',
-    'utilities/item-atts-with-uniq-id.js',
+    'utilities/selected-atts-adjust.js',
     'utilities/atts-toggle-invalid-class.js',
     'utilities/atts-check-selected.js',
     'utilities/option-atts.js',
