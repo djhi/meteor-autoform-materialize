@@ -1,4 +1,4 @@
-Utility.itemAttsWithUniqId = function() {
+Utility.selectedAttsAdjust = function() {
   var atts = _.clone(this.atts)
 
   if (this.selected) {
