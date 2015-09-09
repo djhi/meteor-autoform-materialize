@@ -51,7 +51,6 @@ Package.onUse(function(api) {
     'inputTypes/radio/radio.html',
     'inputTypes/radio/radio.js',
     'inputTypes/range/range.html',
-    'inputTypes/range/range.js',
     'inputTypes/reset/reset.html',
     'inputTypes/search/search.html',
     'inputTypes/select/select.html',
