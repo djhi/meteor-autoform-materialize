@@ -1,5 +1,5 @@
 Template.afSelectMultiple_materialize.helpers({
-  optionAtts: Utility.helpers.optionAtts
+  optionAtts: Utility.optionAtts
 });
 
 Template.afSelectMultiple_materialize.helpers({
