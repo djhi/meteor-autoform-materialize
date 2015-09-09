@@ -22,7 +22,7 @@ minimongo@1.0.8
 momentjs:moment@2.8.4
 observe-sequence@1.0.6
 ordered-dict@1.0.3
-poetic:autoform-materialize@0.1.0
+poetic:autoform-materialize@0.1.1
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5
