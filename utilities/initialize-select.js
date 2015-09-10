@@ -1,15 +1,10 @@
 Utility.initializeSelect = function() {
-  var template = this
-  var select = template.$('select')
-  select.material_select()
-
-  var initialize = _.debounce(function () {
-    select.material_select()
-  }, 500)
-
-  template.autorun(function () {
-    // reinitialize select when data changes
-    Template.currentData()
-    initialize()
-  })
-}
+  this.$('select').material_select();
+  Tracker.autorun((function(_this) {
+    return function() {
+      var options, ref;
+      options = (ref = _this.data) != null ? ref.items : void 0;
+      return _this.$('select').material_select();
+    };
+  })(this));
+};
