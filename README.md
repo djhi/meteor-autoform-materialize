@@ -2,13 +2,9 @@ Meteor Autoform Materialize templates
 =========================
 Adds [materialize](http://materializecss.com/) templates for autoform.
 
-## This is a fork of https://github.com/djhi/meteor-autoform-materialize.
-The original package is breaking on version 0.0.24. We want to maintain
-it ourself.
-
 ## Setup
 
-1. `meteor add poetic:autoform-materialize`
+1. `meteor add gildaspk:autoform-materialize`
 2. In a client file (ex: `/client/config/autoform.js`)
   ```
   AutoForm.setDefaultTemplate('materialize');
@@ -17,7 +13,7 @@ it ourself.
 You must add materialize CSS and JavaScript yourself. Some packages can help:
 
 - [materialize:materialize](https://atmospherejs.com/materialize/materialize) `meteor add materialize:materialize`
-- [yang2007chun:materialize-scss](https://atmospherejs.com/yang2007chun/materialize-scss) `meteor add yang2007chun:materialize-scss`
+- [poetic:materialize-scss](https://atmospherejs.com/poetic/materialize-scss) `meteor add yang2007chun:materialize-scss`
 
 ## Additional type
 
@@ -138,6 +134,7 @@ MySchema = new SimpleSchema({
 ## Contributors
 - Gildas Garcia (@djhi)
 - Razvan Teslaru (@rteslaru)
+- Chun Yang (@Chun-Yang)
 
 ## License
 autoform-materialize is licensed under the [MIT Licence](LICENSE), courtesy of [marmelab](http://marmelab.com).
