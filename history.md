@@ -1,6 +1,6 @@
-# 0.0.24
+# 0.0.23
     - Fixes #55, #49 (thanks to @Chun-Yang and @byennen)
-
+    
 # 0.0.22
  - Fixes #48 (thanks to @jholl)
 
