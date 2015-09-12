@@ -1,13 +1,10 @@
 Template.afTextarea_materialize.helpers({
   atts: function() {
-    var atts;
-    atts = _.clone(this.atts);
-    atts = AutoForm.Utility.addClass(atts, "materialize-textarea");
-    atts = Utility.toggleInvalidClass(atts);
-    return atts;
+    var atts = Utility.attsToggleInvalidClass.call(this);
+    return AutoForm.Utility.addClass(atts, "materialize-textarea");
   }
 });
 
 Template.afTextarea_materialize.rendered = function() {
     this.$('textarea').characterCounter();
-}
+};

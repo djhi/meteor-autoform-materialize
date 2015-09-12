@@ -12,7 +12,6 @@ Package.onUse(function(api) {
   api.addFiles([
     // utility
     'utilities/utility.js',
-    'utilities/toggle-invalid-class.js',
     'utilities/initialize-select.js',
     // utility template helpers
     'utilities/dsk.js',
