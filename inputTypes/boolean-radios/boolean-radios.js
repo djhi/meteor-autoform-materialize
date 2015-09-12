@@ -1,5 +1,5 @@
 Template.afBooleanRadioGroup_materialize.helpers({
-  attrs: Utility.attsToggleInvalidClass
+  atts: Utility.attsToggleInvalidClass
 });
 
 Template.afBooleanRadioGroup_materialize.helpers({

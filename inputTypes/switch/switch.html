@@ -1,10 +1,10 @@
 <template name="afSwitch">
   <div class="switch">
     <label for="{{atts.id}}">
-      {{#with this.atts.falseLabel}}{{this}}{{else}}Off{{/with}}
+      {{#with atts.falseLabel}}{{this}}{{else}}Off{{/with}}
       <input type="checkbox" value="{{this.value}}" {{atts}}>
       <span class="lever"></span>
-      {{#with this.atts.trueLabel}}{{this}}{{else}}On{{/with}}
+      {{#with atts.trueLabel}}{{this}}{{else}}On{{/with}}
     </label>
   </div>
 </template>

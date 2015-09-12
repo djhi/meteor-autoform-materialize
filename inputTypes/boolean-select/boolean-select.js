@@ -1,5 +1,5 @@
 Template.afBooleanSelect_materialize.helpers({
-  attrs: Utility.attsToggleInvalidClass
+  atts: Utility.attsToggleInvalidClass
 });
 
 Template.afBooleanSelect_materialize.helpers({

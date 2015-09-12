@@ -1,3 +1,3 @@
 Template.afInputMonth_materialize.helpers({
-  attrs: Utility.attsToggleInvalidClass
+  atts: Utility.attsToggleInvalidClass
 });
