@@ -20,12 +20,9 @@ AutoForm.addInputType('pickadate', {
     return result;
   },
   valueOut: function() {
-    var item, result;
-    item = this.pickadate('picker').get('select');
-    if (item) {
-      result = item.obj;
-    }
-    return result;
+    var picker = this.pickadate('picker');
+    var item   = picker && picker.get('select');
+    return item && item.obj;
   },
   valueConverters: {
     'string': function(val) {
