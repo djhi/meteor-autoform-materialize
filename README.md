@@ -15,6 +15,10 @@ You must add materialize CSS and JavaScript yourself. Some packages can help:
 - [materialize:materialize](https://atmospherejs.com/materialize/materialize) `meteor add materialize:materialize`
 - [poetic:materialize-scss](https://atmospherejs.com/poetic/materialize-scss) `meteor add poetic:materialize-scss`
 
+## Usage and demo
+
+You can checkout [the playground](https://github.com/djhi/meteor-autoform-materialize-playground) which is running [here](http://autoform-materialize-playground.meteor.com/).
+
 ## Additional type
 
 ### PickADate
@@ -131,6 +135,15 @@ MySchema = new SimpleSchema({
   }
 });
 ```
+
+# Troubleshooting
+
+## Extra carets on selects
+
+This happen when using materialize version `0.97.0`. A fix has been released with version `0.97.1` but there are other issues.
+
+You should use `poetic:materialize-scss` until those problems are corrected.
+
 ## Contributors
 - Gildas Garcia (@djhi)
 - Razvan Teslaru (@rteslaru)

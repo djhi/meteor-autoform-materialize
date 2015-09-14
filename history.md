@@ -1,3 +1,7 @@
+# 0.0.25
+ - Refactoring by @Chun-Yang
+
+
 # 0.0.22
  - Fixes #48 (thanks to @jholl)
 
