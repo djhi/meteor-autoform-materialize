@@ -131,6 +131,15 @@ MySchema = new SimpleSchema({
   }
 });
 ```
+
+# Troubleshooting
+
+## Extra carets on selects
+
+This happen when using materialize version `0.97.0`. A fix has been released with version `0.97.1` but there are other issues.
+
+You should use `poetic:materialize-scss` until those problems are corrected.
+
 ## Contributors
 - Gildas Garcia (@djhi)
 - Razvan Teslaru (@rteslaru)
