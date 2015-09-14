@@ -1,27 +1,24 @@
 Package.describe({
   name: "gildaspk:autoform-materialize",
   summary: "Materialize theme for Autoform",
-  version: "0.0.24",
+  version: "0.0.25",
   git: "https://github.com/djhi/meteor-autoform-materialize.git"
-});
+})
 
 Package.onUse(function(api) {
-  api.versionsFrom("1.0");
-  api.use(["templating", "underscore"], "client");
-  api.use("aldeed:autoform@5.1.1");
+  api.versionsFrom("1.0")
+  api.use(["templating", "underscore"], "client")
+  api.use("aldeed:autoform@5.1.1")
   api.addFiles([
     // utility
-    'utilities/initialize.js',
-    'utilities/toggle-invalid-class.js',
+    'utilities/utility.js',
     'utilities/initialize-select.js',
     // utility template helpers
-    'utilities/helpers/initialize.js',
-    'utilities/helpers/dsk.js',
-    'utilities/helpers/item-atts-with-uniq-id.js',
-    'utilities/helpers/atts-toggle-invalid-class.js',
-    'utilities/helpers/atts-check-selected.js',
-    'utilities/helpers/atts-add-class.js',
-    'utilities/helpers/option-atts.js',
+    'utilities/dsk.js',
+    'utilities/selected-atts-adjust.js',
+    'utilities/atts-toggle-invalid-class.js',
+    'utilities/atts-check-selected.js',
+    'utilities/option-atts.js',
     // input types
     'inputTypes/boolean-checkbox/boolean-checkbox.html',
     'inputTypes/boolean-checkbox/boolean-checkbox.js',
@@ -30,7 +27,6 @@ Package.onUse(function(api) {
     'inputTypes/boolean-select/boolean-select.html',
     'inputTypes/boolean-select/boolean-select.js',
     'inputTypes/button/button.html',
-    'inputTypes/button/button.js',
     'inputTypes/color/color.html',
     'inputTypes/color/color.js',
     'inputTypes/contenteditable/contenteditable.html',
@@ -54,9 +50,7 @@ Package.onUse(function(api) {
     'inputTypes/radio/radio.html',
     'inputTypes/radio/radio.js',
     'inputTypes/range/range.html',
-    'inputTypes/range/range.js',
     'inputTypes/reset/reset.html',
-    'inputTypes/reset/reset.js',
     'inputTypes/search/search.html',
     'inputTypes/select/select.html',
     'inputTypes/select/select.js',
@@ -71,7 +65,6 @@ Package.onUse(function(api) {
     'inputTypes/select-radio-inline/select-radio-inline.html',
     'inputTypes/select-radio-inline/select-radio-inline.js',
     'inputTypes/submit/submit.html',
-    'inputTypes/submit/submit.js',
     'inputTypes/tel/tel.html',
     'inputTypes/tel/tel.js',
     'inputTypes/text/text.html',
@@ -100,5 +93,5 @@ Package.onUse(function(api) {
     'components/afFormGroup/afFormGroup.js',
     'components/afObjectField/afObjectField.html',
     'components/afQuickField/afQuickField.html'
-  ], "client");
-});
+  ], "client")
+})
