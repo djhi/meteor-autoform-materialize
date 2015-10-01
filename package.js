@@ -40,6 +40,7 @@ Package.onUse(function(api) {
     'inputTypes/email/email.js',
     'inputTypes/file/file.html',
     'inputTypes/hidden/hidden.html',
+    'inputTypes/icon/icon.html',
     'inputTypes/image/image.html',
     'inputTypes/month/month.html',
     'inputTypes/month/month.js',

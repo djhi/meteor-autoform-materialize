@@ -1,6 +1,9 @@
 <template name="afFormGroup_materialize">
     <div class="row">
         <div class="{{#if addInputField}}input-field{{/if}} col s12">
+            {{#if this.afFieldInputAtts.icon}}
+                {{> afIcon_materialize this.afFieldInputAtts}}
+            {{/if}}
             {{#if skipLabel}}
                 {{> afFieldInput this.afFieldInputAtts}}
             {{else}}
