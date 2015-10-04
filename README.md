@@ -136,6 +136,21 @@ MySchema = new SimpleSchema({
 });
 ```
 
+### Input with prepended icon
+You can add icon to any field like this:
+```
+{{> afQuickField name='subject' icon='person'}}
+```
+For blank space in place of icon, just use "none":
+```
+{{> afQuickField name='subject' icon='none'}}
+```
+
+It also works for textarea:
+```
+{{> afQuickField name='message' type='textarea' icon='person'}}
+```
+
 # Troubleshooting
 
 ## Extra carets on selects
