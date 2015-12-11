@@ -88,8 +88,6 @@ Template['afPickadate'].rendered = function() {
     data = Template.currentData();
     if (data.value instanceof Date) {
       picker.set('select', data.value);
-    } else {
-      picker.set('clear');
     }
     if (data.min instanceof Date) {
       picker.set('min', data.min);
