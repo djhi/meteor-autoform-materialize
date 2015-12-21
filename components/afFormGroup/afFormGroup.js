@@ -58,7 +58,7 @@ Template.afFormGroup_materialize.rendered = function() {
             ];
 
             if (!_.contains(skipActiveLabelTypes, type)) {
-                if (!!value || !!inputValue || !!placeholder) {
+                if (!!value || !!inputValue || inputValue === 0 || !!placeholder) {
                     return _this.$('.input-field > label:not(:focus)').addClass('active');
                 } else {
                     return _this.$('.input-field > label:not(:focus)').removeClass('active');
