@@ -1,14 +1,14 @@
 Package.describe({
   name: "gildaspk:autoform-materialize",
   summary: "Materialize theme for Autoform",
-  version: "0.0.25",
+  version: "0.0.26",
   git: "https://github.com/djhi/meteor-autoform-materialize.git"
 })
 
 Package.onUse(function(api) {
   api.versionsFrom("1.0")
   api.use(["templating", "underscore"], "client")
-  api.use('momentjs:moment')
+  api.use('momentjs:moment@2.10.6')
   api.use("aldeed:autoform@5.1.1")
   api.addFiles([
     // utility
