@@ -1,10 +1,6 @@
 Template.afSelectMultiple_materialize.helpers({
+  atts: Utility.attsToggleInvalidClass,
   optionAtts: Utility.optionAtts
 });
 
-Template.afSelectMultiple_materialize.helpers({
-  atts: function() {
-    var atts = Utility.attsToggleInvalidClass.call(this);
-    return AutoForm.Utility.addClass(atts, 'browser-default');
-  }
-});
+Template.afSelectMultiple_materialize.onRendered(Utility.initializeSelect);
