@@ -1,11 +1,13 @@
 Utility.optionAtts = function() {
-  var atts, item;
-  item = this;
-  atts = {
-    value: item.value
-  };
-  if (item.selected) {
+  var atts = _.pick(this, 'value');
+
+  if (this.selected) {
     atts.selected = '';
   }
+
+  if (!_.isEmpty(this.htmlAtts)) {
+    _.extend(atts, this.htmlAtts);
+  }
+
   return atts;
 };
