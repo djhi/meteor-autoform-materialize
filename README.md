@@ -34,7 +34,7 @@ You can also specify it at the schema level:
 ```
 MySchema = new SimpleSchema({
   dateFieldName: {
-    type: Date
+    type: Date,
     autoform: {
       type:"pickadate"
     }
@@ -87,7 +87,7 @@ At the schema level:
 ```
 MySchema = new SimpleSchema({
   booleanFieldName: {
-    type: Boolean
+    type: Boolean,
     autoform: {
       type:"switch"
     }
@@ -106,10 +106,10 @@ At the schema level:
 ```
 MySchema = new SimpleSchema({
   booleanFieldName: {
-    type: Boolean
+    type: Boolean,
     autoform: {
-      type:"switch"
-      trueLabel:"Online"
+      type:"switch",
+      trueLabel:"Online",
       falseLabel:"Offline"
     }
   }
@@ -126,10 +126,10 @@ At the schema level:
 ```
 MySchema = new SimpleSchema({
   booleanFieldName: {
-    type: Boolean
+    type: Boolean,
     autoform: {
-      type:"switch"
-      trueValue:"online"
+      type:"switch",
+      trueValue:"online",
       falseValue:"offline"
     }
   }
