@@ -10,7 +10,7 @@
           data-autoform-field="{{atts.name}}"
           data-autoform-minCount="{{atts.minCount}}"
           data-autoform-maxCount="{{atts.maxCount}}">
-            Add <i class="mdi-content-add"></i>
+            Add <i class="material-icons">add</i>
         </button>
       {{/if}}
     </div>
@@ -26,7 +26,7 @@
       {{#if afArrayFieldHasMoreThanMinimum name=../atts.name minCount=../atts.minCount maxCount=../atts.maxCount}}
         <div class="collection-item">
           <button type="button" class="btn autoform-remove-item">
-            Remove <span class="mdi-content-clear"></span>
+            Remove <i class="material-icons">clear</i>
           </button>
         </div>
       {{/if}}
