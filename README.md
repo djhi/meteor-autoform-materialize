@@ -8,7 +8,7 @@ Adds [materialize](http://materializecss.com/) templates for autoform.
 
 ## Setup
 
-1. `meteor add gildaspk:autoform-materialize`
+1. `meteor add mozfet:autoform-materialize`
 2. In a client file (ex: `/client/config/autoform.js`)
   ```
   AutoForm.setDefaultTemplate('materialize');
