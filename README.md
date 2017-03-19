@@ -19,7 +19,7 @@ You must add materialize CSS and JavaScript yourself. Some packages can help:
 
 ## Usage and demo
 
-You can checkout [the playground](https://github.com/djhi/meteor-autoform-materialize-playground) which is running [here](http://autoform-materialize-playground.meteor.com/).
+You can checkout [the playground](https://github.com/mozfet/meteor-autoform-materialize-playground)
 
 ## Additional type
 
