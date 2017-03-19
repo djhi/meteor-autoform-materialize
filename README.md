@@ -2,11 +2,11 @@ Meteor Autoform Materialize templates
 =========================
 Adds [materialize](http://materializecss.com/) templates for autoform.
 
-> **Important** I no longer use Meteor and won't be updating this project anymore. If anyone is interested in taking care of it, I'll gladly transfer ownership.
+> **Important** I have recently taken over this project from @djhi. Thank you to @djhi and other contributors for getting this package up to this point. I will try my best to make it even better.
 
 ## Setup
 
-1. `meteor add gildaspk:autoform-materialize`
+1. `meteor add mozfet:autoform-materialize`
 2. In a client file (ex: `/client/config/autoform.js`)
   ```
   AutoForm.setDefaultTemplate('materialize');
