@@ -46,6 +46,7 @@ Template.afFormGroup_materialize.rendered = function() {
             var placeholder = _this.data.afFieldInputAtts.placeholder;
             var skipActiveLabelTypes = [
                 'select',
+                'select-multiple',
                 'checkbox',
                 'checkbox-group',
                 'boolean-checkbox',
