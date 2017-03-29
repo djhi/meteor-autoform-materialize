@@ -2,14 +2,14 @@
   <div class="card-panel autoform-object-field">
     <div class="card-content">
       {{#with afFieldLabelText name=this.name}}
-        <div class="card-title">
-          {{this}}
+        <div class="card-title" style="margin-bottom: 2em">
+          <h5>{{this}}</h5>
         </div>
       {{/with}}
       {{#if afFieldIsInvalid name=this.name}}
         <div class="red-text">{{{afFieldMessage name=this.name}}}</div>
       {{/if}}
-      {{> afQuickFields name=this.name}}
+      {{> afQuickFields quickFieldsAtts}}
     </div>
   </div>
 </template>
