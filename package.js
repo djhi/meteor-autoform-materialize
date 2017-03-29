@@ -81,6 +81,9 @@ Package.onUse(function(api) {
     'inputTypes/week/week.js',
     'inputTypes/switch/switch.html',
     'inputTypes/switch/switch.js',
+    'inputTypes/pickadate/pickatime.html',
+    'inputTypes/pickadate/pickatime.js',
+    //???the files of materializeTimePicker as well????
     'inputTypes/pickadate/pickadate.html',
     'inputTypes/pickadate/pickadate.js',
     'inputTypes/label/label.html',
