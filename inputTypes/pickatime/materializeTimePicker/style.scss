@@ -1,0 +1,72 @@
+// If you want to override materialize sass variables you can uncomment the following:
+// @import "{poetic:materialize-scss}/sass/components/_color.scss";
+// $primary-color: color("blue", "lighten-2");
+$primary-color: black;
+$action-color: teal;
+$low-margin: 0px;
+$space-margin: 0.3em;
+$primary-size: 5em;
+$secondary-size: 2.5em;
+
+// import main scss file
+// @import "{poetic:materialize-scss}/sass/materialize.scss";
+
+.timePickerModal {
+  width: 300px !important;
+  height: 310px !important;
+}
+
+.materialize-time-picker-unit {
+  color: $primary-color;
+}
+
+.materialize-time-picker-compact {
+  margin-top: $low-margin;
+  margin-bottom: $low-margin;
+  margin-left: $low-margin;
+  margin-right: $low-margin;
+  padding-top: $low-margin;
+  padding-bottom: $low-margin;
+  padding-left: $low-margin;
+  padding-right: $low-margin;
+}
+
+.materialize-time-picker-icon {
+  font-size: $primary-size;
+  color: $action-color;
+}
+
+.materialize-time-picker-hours {
+  @extend .materialize-time-picker-compact;
+}
+
+.materialize-time-picker-minutes {
+  @extend .materialize-time-picker-compact;
+  margin-left: $space-margin;
+}
+
+.materialize-time-picker-unit-digits {
+  @extend .materialize-time-picker-compact;
+  color: $primary-color;
+  font-size: $primary-size;
+  padding: $low-margin
+}
+
+.materialize-time-picker-meridiem {
+  @extend .materialize-time-picker-compact;
+  padding-left: $space-margin;
+}
+
+.materialize-time-picker-meridiem-value {
+  font-size: $secondary-size;
+  padding-left: $space-margin;
+  padding-right: $low-margin;
+}
+
+.materialize-time-picker-unit-increase {
+  @extend .materialize-time-picker-compact;
+}
+
+.materialize-time-picker-unit-decrease {
+  @extend .materialize-time-picker-compact;
+}
