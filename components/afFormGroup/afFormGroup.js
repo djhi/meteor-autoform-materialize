@@ -1,4 +1,4 @@
-Template.afFormGroup_materialize.helpers({
+Template.afFormGroup_material.helpers({
     addInputField: function() {
         var result, skipInputType, type;
         skipInputType = [
@@ -35,7 +35,7 @@ Template.afFormGroup_materialize.helpers({
     }
 });
 
-Template.afFormGroup_materialize.rendered = function() {
+Template.afFormGroup_material.rendered = function() {
     var formId;
     formId = AutoForm.getFormId();
     this.autorun((function(_this) {
@@ -52,6 +52,7 @@ Template.afFormGroup_materialize.rendered = function() {
                 'select-radio',
                 'select-checkbox-inline',
                 'select-radio-inline',
+                'select-multiple',
                 'boolean-radio',
                 'toggle',
                 'switch'
