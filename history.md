@@ -1,8 +1,5 @@
-# 0.1.1
- - Fixing dependencies
-
-# 0.1.1
- - Fixing dependencies
+# 0.1.1 - 1.1.4
+ - Fixing package imports and dependencies
 
 # 0.1.0
  - Improved object layouts
