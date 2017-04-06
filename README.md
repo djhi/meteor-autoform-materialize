@@ -138,6 +138,12 @@ MySchema = new SimpleSchema({
 });
 ```
 
+### Time Picker
+Time picker depends on foursever/meteor-scss for generating css. To use timepicker in your project, add the following somewhere in your sass import chain:
+```
+@import "{mozfet:meteor-autoform-materialize}/styles.scss";
+```
+
 ### Input with prepended icon
 You can add icon to any field like this:
 ```

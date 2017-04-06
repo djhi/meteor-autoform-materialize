@@ -10,6 +10,9 @@ Package.onUse(function(api) {
   api.use(["templating", "underscore", "reactive-var", "blaze"], "client")
   api.use('momentjs:moment@2.10.6')
   api.use("aldeed:autoform@5.1.1")
+  api.addAsset([
+    'inputTypes/pickatime/materializeTimePicker/style.scss'
+  ], "client")
   api.addFiles([
     // utility
     'utilities/utility.js',
@@ -89,7 +92,6 @@ Package.onUse(function(api) {
     'inputTypes/pickatime/materializeTimePicker/modal.js',
     'inputTypes/pickatime/materializeTimePicker/picker.html',
     'inputTypes/pickatime/materializeTimePicker/picker.js',
-    'inputTypes/pickatime/materializeTimePicker/style.scss',
     'inputTypes/pickatime/materializeTimePicker/unit.html',
     'inputTypes/pickatime/materializeTimePicker/unit.js',
 
