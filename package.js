@@ -10,9 +10,7 @@ Package.onUse(function(api) {
   api.use(["templating", "underscore", "reactive-var", "blaze"], "client")
   api.use('momentjs:moment@2.10.6')
   api.use("aldeed:autoform@5.1.1")
-  api.addAsset([
-    'inputTypes/pickatime/materializeTimePicker/style.scss'
-  ], "client")
+  api.use('fourseven:scss')
   api.addFiles([
     // utility
     'utilities/utility.js',
