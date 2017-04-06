@@ -1,4 +1,4 @@
-# 0.1.1 - 1.1.4
+# 0.1.1 - 1.1.19
  - Fixing package imports and dependencies
 
 # 0.1.0
