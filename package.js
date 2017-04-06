@@ -82,6 +82,18 @@ Package.onUse(function(api) {
     'inputTypes/switch/switch.html',
     'inputTypes/switch/switch.js',
     'inputTypes/pickatime/pickatime.html',
+
+    'inputTypes/pickatime/materializeTimePicker/meridiem.html',
+    'inputTypes/pickatime/materializeTimePicker/meridien.js',
+    'inputTypes/pickatime/materializeTimePicker/modal.html',
+    'inputTypes/pickatime/materializeTimePicker/modal.js',
+    'inputTypes/pickatime/materializeTimePicker/picker.html',
+    'inputTypes/pickatime/materializeTimePicker/picker.js',
+    'inputTypes/pickatime/materializeTimePicker/style.scss',
+    'inputTypes/pickatime/materializeTimePicker/unit.html',
+    'inputTypes/pickatime/materializeTimePicker/unit.js',
+
+    'inputTypes/pickatime/pickatime.js',
     'inputTypes/pickatime/pickatime.js',
     //???the files of materializeTimePicker as well????
     'inputTypes/pickadate/pickadate.html',

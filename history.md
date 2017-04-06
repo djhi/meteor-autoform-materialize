@@ -1,3 +1,14 @@
+# 0.1.1
+ - Fixing dependencies
+
+# 0.1.1
+ - Fixing dependencies
+
+# 0.1.0
+ - Improved object layouts
+ - Fixed multiple select input type
+ - Added time picker input type
+
 # 0.0.25
  - Refactoring by @Chun-Yang
 
