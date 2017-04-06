@@ -159,6 +159,39 @@ It also works for textarea:
 {{> afQuickField name='message' type='textarea' icon='person'}}
 ```
 
+# Building (on a Mac)
+This package uses https://github.com/fourseven/meteor-scss, a preprocessor taking scss files as input and producing css files.
+
+Since fourseven:scss 3.9.0+ there are no pre-build binaries anymore. In order to build and publish this package you are required to set up the required toolchain yourselves as per https://github.com/nodejs/node-gyp.
+
+Install xcode command line tools, then:
+```
+$ npm install -g node-gyp
+$ cd myProjectPath
+$ node-gyp configure
+$ node-gyp build
+```
+
+# Publishing
+Update version number in package.js.
+
+Add, commit and push to git repo:
+```
+$ git add .
+$ git commit -m "msg"
+$ git push
+```
+
+Publish on atmosphere the first time, as per https://atmospherejs.com/i/publishing:
+```
+$ meteor publish --create
+```
+
+Republish on atmosphere, as per https://atmospherejs.com/i/publishing:
+```
+$ meteor publish
+```
+
 # Troubleshooting
 
 ## Extra carets on selects
