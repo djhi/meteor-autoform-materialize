@@ -1,7 +1,7 @@
 Package.describe({
   name: "mozfet:autoform-materialize",
   summary: "Materialize theme for Autoform",
-  version: "0.1.2",
+  version: "0.1.3",
   git: "https://github.com/mozfet/meteor-autoform-materialize.git"
 });
 
@@ -84,7 +84,7 @@ Package.onUse(function(api) {
     'inputTypes/pickatime/pickatime.html',
 
     'inputTypes/pickatime/materializeTimePicker/meridiem.html',
-    'inputTypes/pickatime/materializeTimePicker/meridien.js',
+    'inputTypes/pickatime/materializeTimePicker/meridiem.js',
     'inputTypes/pickatime/materializeTimePicker/modal.html',
     'inputTypes/pickatime/materializeTimePicker/modal.js',
     'inputTypes/pickatime/materializeTimePicker/picker.html',
