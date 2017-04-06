@@ -1,9 +1,5 @@
 /*jshint esversion: 6 */
 
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
-import { Blaze } from 'meteor/blaze';
-import moment from 'moment';
 import './materializeTimePicker';
 
 const TIME_FORMAT = 'h:mm A';

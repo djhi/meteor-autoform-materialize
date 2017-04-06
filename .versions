@@ -33,7 +33,7 @@ modules@0.7.9
 modules-runtime@0.7.9
 momentjs:moment@2.10.6
 mongo-id@1.0.6
-mozfet:autoform-materialize@0.0.26
+mozfet:autoform-materialize@0.1.0
 observe-sequence@1.0.16
 ordered-dict@1.0.9
 promise@0.8.8
