@@ -1,4 +1,6 @@
-/* global AutoForm */
+/*jshint esversion: 6 */
+
+import { Template } from 'meteor/templating';
 
 /*
  * Template helpers for "materializecss" templates

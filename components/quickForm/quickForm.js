@@ -1,4 +1,9 @@
-Template['quickForm_materialize'].helpers({
+/*jshint esversion: 6 */
+
+import { Template } from 'meteor/templating';
+import './quickForm.html';
+
+Template.quickForm_materialize.helpers({
   submitButtonAtts: function() {
     var atts, qfAtts;
     qfAtts = this.atts;

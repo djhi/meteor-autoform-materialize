@@ -1,3 +1,8 @@
+/*jshint esversion: 6 */
+
+import { Template } from 'meteor/templating';
+import './pickadate.html';
+
 var DEFAULT_PICKADATE_FORMAT_SUBMIT = 'yyyy/mm/dd';
 
 AutoForm.addInputType('pickadate', {

@@ -1,3 +1,8 @@
+/*jshint esversion: 6 */
+
+import { Template } from 'meteor/templating';
+import './switch.html';
+
 AutoForm.addInputType('switch', {
   template: 'afSwitch',
   valueIn: function(value) {

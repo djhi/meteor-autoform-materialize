@@ -1,0 +1,64 @@
+@import "{poetic:materialize-scss}/sass/components/_color.scss";
+
+$primary-color: color("blue", "base") !default;
+$primary-color-light: color("blue", "lighten-4") !default;
+$primary-color-dark: color("blue", "darken-4") !default;
+$secondary-color: color("orange", "lighten-1") !default;
+$success-color: color("green", "base") !default;
+$error-color: color("red", "base") !default;
+$link-color: color("light-blue", "darken-1") !default;
+
+@import "{poetic:materialize-scss}/sass/materialize.scss";
+
+.eb-input-error {
+  margin: 0px;
+  font-size:50%;
+}
+.card {
+  overflow: visible !important;
+}
+
+.action-btn.active ul {
+  visibility: visible;
+}
+
+.action-btn.horizontal {
+  padding: 0 0 0 15px;
+}
+
+.action-btn.horizontal ul {
+  text-align: right;
+  right: 64px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 100%;
+  left: initial;
+  width: 500px;
+  /*width 100% only goes to width of button container */
+}
+
+.action-btn.horizontal ul li {
+  display: inline-block;
+  margin: 15px 15px 0 0;
+}
+
+.action-btn ul {
+  left: 0;
+  right: 0;
+  text-align: center;
+  position: absolute;
+  bottom: 64px;
+  margin: 0;
+  visibility: hidden;
+}
+
+.action-btn ul li {
+  margin-bottom: 15px;
+}
+
+.action-btn ul a.btn-floating {
+  opacity: 0;
+}
+
+@import "../../imports/ui/components/designer/designer.scss";
